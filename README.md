@@ -1,48 +1,104 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+# lennartki/n8n-nodes-postnl
 
-# n8n-nodes-starter
+![n8n logo](n8n.png)
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](https://n8n.io). It includes the node linter and other dependencies.
+Project for [**PostNL OpenAPI spec**](https://api.postnl.nl/)
+using [**devlikeapro/n8n-openapi-node**](https://github.com/devlikeapro/n8n-openapi-node)
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+![screenshot](./images/screenshot.png)
 
-If you would like your node to be available on n8n cloud you can also [submit your node for verification](https://docs.n8n.io/integrations/creating-nodes/deploy/submit-community-nodes/).
+<!-- toc -->
 
-## Prerequisites
+- [Run PostNL n8n node locally](#run-postnl-n8n-node-locally)
+  * [NodeJS](#nodejs)
+  * [Install n8n](#install-n8n)
+  * [Start n8n](#start-n8n)
+  * [Build and link the project](#build-and-link-the-project)
+  * [Add node to n8n](#add-node-to-n8n)
+  * [Start n8n again](#start-n8n-again)
+  * [Add PostNL Node to new workflow](#add-postnl-node-to-new-workflow)
+- [Modify Project](#modify-project)
+  * [Test Project Locally](#test-project-locally)
+  * [Publish project](#publish-project)
 
-You need the following installed on your development machine:
+<!-- tocstop -->
 
-* [git](https://git-scm.com/downloads)
-* Node.js and npm. Minimum version Node 20. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-  ```
-  npm install n8n -g
-  ```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+# Run PostNL n8n node locally
+Before start modifying the project, we kindly recommend
+to run the PostNL locally.
 
-## Using this starter
+## NodeJS
+Make sure you're using Node.js > 20 (we're using [nvm](https://github.com/nvm-sh/nvm)):
+```bash
+nvm install v22.8
+nvm use v22.8
+```
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+## Install n8n 
+```bash
+npm install n8n -g
+```
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-   ```
-   git clone https://github.com/<your organization>/<your-repo-name>.git
-   ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+## Start n8n
+```bash
+n8n --version
+n8n start
+```
+Open [http://localhost:5678](http://localhost:5678) in your browser and configure it
 
-## More information
+## Build and link the project
+```bash
+npm install
+npm run test
+npm run build
+npm link
+```
 
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+## Add node to n8n
+```bash
+cd ~/.n8n
+mkdir -p custom
+cd custom
+npm init # press Enter for all questions
+npm link lennartki/n8n-nodes-postnl
+```
 
-## License
+## Start n8n again
+```bash
+n8n start
+```
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+## Add PostNL Node to new workflow
+Find `PostNL` in the node list and add it to your workflow
+
+![workflow](./images/workflow.png)
+![screenshot](./images/screenshot.png)
+
+## Test Project Locally
+
+```bash
+npm install
+npm run test
+npm run build
+npm link
+```
+
+Add node to n8n:
+```bash
+cd ~/.n8n
+mkdir -p custom
+cd custom
+npm init # press Enter for all questions
+npm link lennartki/n8n-nodes-postnl
+```
+
+Start n8n:
+```bash
+n8n start
+```
+
+## Publish project
+1. Add your `NPM_TOKEN` in GitHub Actions
+2. Push change
+3. Create a new GitHub Release, `1.0.0` in your project
+4. Install your node in n8n: `@{yourgithubname}/n8n-nodes-{yournode}`
