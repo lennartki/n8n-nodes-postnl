@@ -1,6 +1,6 @@
-import {Petstore} from "./Petstore.node";
+import {PostNL} from "./PostNL.node";
 
 test("smoke", () => {
-    const node = new Petstore()
+    const node = new PostNL()
     expect(node.description.properties).toBeDefined()
 })

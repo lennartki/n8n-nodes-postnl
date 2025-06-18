@@ -1,17 +1,17 @@
 {
-	"node": "n8n-nodes-base.petstore",
+	"node": "n8n-nodes-base.postnl",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development", "Developer Tools"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "http://httpbin.org/#/Auth/get_bearer"
+				"url": "https://developer.postnl.nl/docs/#/http/getting-started/how-to-get-started/authorization"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "http://httpbin.org/"
+				"url": "https://developer.postnl.nl/docs"
 			}
 		]
 	}
