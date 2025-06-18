@@ -1,11 +1,11 @@
-# lennartki/n8n-nodes-postnl
+# n8n-nodes-postnl
 
 ![n8n logo](n8n.png)
 
 Project for [**PostNL OpenAPI spec**](https://api.postnl.nl/)
 using [**devlikeapro/n8n-openapi-node**](https://github.com/devlikeapro/n8n-openapi-node)
 
-![screenshot](./images/screenshot.png)
+
 
 <!-- toc -->
 
@@ -60,7 +60,7 @@ cd ~/.n8n
 mkdir -p custom
 cd custom
 npm init # press Enter for all questions
-npm link lennartki/n8n-nodes-postnl
+npm link n8n-nodes-postnl
 ```
 
 ## Start n8n again
@@ -89,7 +89,7 @@ cd ~/.n8n
 mkdir -p custom
 cd custom
 npm init # press Enter for all questions
-npm link lennartki/n8n-nodes-postnl
+npm link n8n-nodes-postnl
 ```
 
 Start n8n:
