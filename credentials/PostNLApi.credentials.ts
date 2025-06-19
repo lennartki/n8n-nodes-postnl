@@ -18,6 +18,24 @@ export class PostNLApi implements ICredentialType {
 				password: true,
 			}
 		},
+		{
+			displayName: 'Environment',
+			name: 'environment',
+			type: 'options',
+			options: [
+				{
+					name: 'Production',
+					value: 'https://api.postnl.nl',
+				},
+				{
+					name: 'Sandbox',
+					value: 'https://api-sandbox.postnl.nl',
+				},
+			],
+			default: 'https://api-sandbox.postnl.nl',
+			required: true,
+			description: 'This API has support for multiple environments. Each environment has one or more base URIs defined. Use Production for Production Server and Sandbox for Non-Production Server (Sandbox environment for testing)',
+		},
 	];
 
 	// This allows the credential to be used by other parts of n8n

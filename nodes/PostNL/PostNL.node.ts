@@ -31,7 +31,7 @@ export class PostNL implements INodeType {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
-            baseURL: 'https://api.postnl.nl',
+            baseURL: '={{$credentials.environment}}',
         },
         properties: properties,
     };
