@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-postnl",
+  "name": "@lennartki/n8n-nodes-postnl",
   "version": "0.1.0",
   "description": "n8n node to connect with PostNL API",
   "keywords": [

@@ -10,7 +10,7 @@ link:
 	npm link
 
 start:
-	cd ~/.n8n/custom && npm link n8n-nodes-postnl && n8n start
+	cd ~/.n8n/custom && npm link @lennartki/n8n-nodes-postnl && n8n start
 
 tests:
 	npm run test

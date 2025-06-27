@@ -1,4 +1,4 @@
-# n8n-nodes-postnl
+# @lennartki/n8n-nodes-postnl
 
 ![n8n logo](n8n.png)
 
@@ -60,7 +60,7 @@ cd ~/.n8n
 mkdir -p custom
 cd custom
 npm init # press Enter for all questions
-npm link n8n-nodes-postnl
+npm link @lennartki/n8n-nodes-postnl
 ```
 
 ## Start n8n again
@@ -89,7 +89,7 @@ cd ~/.n8n
 mkdir -p custom
 cd custom
 npm init # press Enter for all questions
-npm link n8n-nodes-postnl
+npm link @lennartki/n8n-nodes-postnl
 ```
 
 Start n8n:
