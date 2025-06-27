@@ -31,6 +31,10 @@ export class PostNLApi implements ICredentialType {
 					name: 'Sandbox',
 					value: 'https://api-sandbox.postnl.nl',
 				},
+				{
+					name: 'Webhook',
+					value: 'https://webhook.site/95822d03-c267-4847-b6bf-ab88a4fd0281',
+				},
 			],
 			default: 'https://api-sandbox.postnl.nl',
 			required: true,

@@ -523,21 +523,23 @@
             }
           },
           {
-            "name": "period",
+            "name": "period[0]",
             "in": "query",
             "description": "Optional array which defines a specific period in which to return updated shipments. For optimal results, schedule calls at a frequency between 5-15 minutes and align the requested period accordingly to ensure complete coverage of past updates. Shorter periods yield improved response times. The API accommodates a maximum requested period of 2 hours, granting access to shipment data up to 48 hours in the past. Please use the following format: YYYY-MM-DDTHH:MM:SS and repeat this variable to define the period (e.g. /updatedshipments?period=2022-11-07T12:00:00.000&period=2022-11-07T12:05:00.000).",
-            "style": "form",
-            "explode": true,
+            "required": true,
             "schema": {
-              "maxItems": 2,
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "example": [
-                "2022-11-07T12:00:00",
-                "2022-11-07T12:05:00"
-              ]
+              "type": "string",
+              "example": "2022-11-07T12:00:00"
+            }
+          },
+          {
+            "name": "period[1]",
+            "in": "query",
+            "description": "Optional array which defines a specific period in which to return updated shipments. For optimal results, schedule calls at a frequency between 5-15 minutes and align the requested period accordingly to ensure complete coverage of past updates. Shorter periods yield improved response times. The API accommodates a maximum requested period of 2 hours, granting access to shipment data up to 48 hours in the past. Please use the following format: YYYY-MM-DDTHH:MM:SS and repeat this variable to define the period (e.g. /updatedshipments?period=2022-11-07T12:00:00.000&period=2022-11-07T12:05:00.000).",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "2022-11-07T12:05:00"
             }
           }
         ],
